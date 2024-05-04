@@ -1,0 +1,17 @@
+<%- include("partials/nav.ejs") %>
+<h1 style="margin-left: 10px;">Welcome to the Blog!</h1>
+<a href="/create" class="btn btn-primary" style="margin-left: 10px;">to create another form</a>
+<br>
+<ul>
+    <% posts.forEach(post => { %>
+        <div class="card">
+            <h5 class="card-header">blog <%=post.count %><% post.count++ %>  </h5>
+            <div class="card-body">
+              <h5 class="card-title"><%= post.title %></h5>
+              <p class="card-text"><%= post.content %></p>
+            </div>
+          </div>
+    <% }) %>
+</ul>
+
+<%- include("partials/footer.ejs") %>
